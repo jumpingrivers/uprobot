@@ -13,11 +13,18 @@ To get a key
   
 ## Usage
 
-Install the package
+Install the package in the usual way
 
 ```
+remotes::install_github("jumpingrivers/uprobot")
 library("uprobot")
-api_key = "XXX"
-mon = get_monitors(api_key, logs = TRUE)
+```
+To use the the package, you need an upRobot account and API key (see below). 
+You can either pass the API key explicity, or set is as an environmental
+variable `UPTIME_ROBOT_TOKEN` in your `.Renviron`
+```
+mon = get_monitors(api_key = "XXX", logs = TRUE)
 mon$logs
+# If set in your .Renviron
+# get_monitors(logs = TRUE)
 ```

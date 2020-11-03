@@ -17,16 +17,15 @@ check_uprobot_rtn = function(con) {
 #' make this function to always return a tibble with the same number of columns. However,
 #' the api itself isn't really consistent and depends on the arguments passed.
 #' @seealso https://uptimerobot.com/api
-#' @importFrom lubridate as_datetime
-#' @importFrom tibble tibble as_tibble
 #' @export
-get_monitors = function(api_key,
+get_monitors = function(api_key  = NULL,
                         logs = FALSE,
                         all_uptime_ratio = FALSE,
                         all_time_uptime_durations = FALSE,
                         custom_uptime_ratios = NULL,
                         response_times = FALSE
 ) {
+  api_key = get_token(api_key)
   res = httr::POST("https://api.uptimerobot.com/v2/getMonitors",
                    body = list(api_key = api_key,
                                logs = as.integer(logs),
