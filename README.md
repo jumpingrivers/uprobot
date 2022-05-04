@@ -1,5 +1,9 @@
 # Uptime Robot
 
+<!-- badges: start -->
+  [![R-CMD-check](https://github.com/jumpingrivers/uprobot/workflows/R-CMD-check/badge.svg)](https://github.com/jumpingrivers/uprobot/actions)
+<!-- badges: end -->
+
 Grab data from uptime robot via it's [API](https://uptimerobot.com/api).
 
   * This package does not include all features of the API
